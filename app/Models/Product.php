@@ -14,6 +14,5 @@ class Product extends Model
         'productPrice',
         'stock',
         'netContent'
-        
     ];
 }
