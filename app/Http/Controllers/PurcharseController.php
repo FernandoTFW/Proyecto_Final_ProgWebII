@@ -51,7 +51,7 @@ class PurcharseController extends Controller
         return $result;
     }
 
-    public function deleteCustomer($id) {
+    public function deletePurchase($id) {
         $result = ['result' => 'ok'];
         try {
             $purchase = Purchase::find($id);
@@ -61,5 +61,9 @@ class PurcharseController extends Controller
         }
 
         return $result;
+    }
+
+    public function newPurchase() {
+        return view("Purchase.new");
     }
 }

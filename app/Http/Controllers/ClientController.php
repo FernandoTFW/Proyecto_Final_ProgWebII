@@ -13,6 +13,10 @@ class ClientController extends Controller
         return Client::all();
     }
 
+    public function get($id) {
+        return Client::find($id);
+    }
+
     public function listClients() {
         return view("clients.list", ["clients" => Client::all()]);
     }
@@ -26,7 +30,7 @@ class ClientController extends Controller
             "businessName" => $request->businessName,
             "nit" => $request->nit
         ]);
-        return view("clients.list", ["clients" => Client::all()]);
+        return ['result' => 'ok'];
     }
 
     public function editClient($id) {
@@ -39,12 +43,12 @@ class ClientController extends Controller
         $client->businessName = $request->businessName;
         $client->nit = $request->nit;
         $client->update();
-        return view("clients.list", ["clients" => Client::all()]);
+        return ['result' => 'ok'];
     }
 
     public function deleteClient(Request $request) {
         $client = Client::where(["id" => $request->id])->first();
         $client->delete();
-        return view("clients.list", ["clients" => Client::all()]);
+        return ['result' => 'ok'];
     }
 }
