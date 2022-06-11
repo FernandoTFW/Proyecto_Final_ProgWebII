@@ -65,3 +65,13 @@ Route::get('/purchaseDetails/{id}', [PurchaseDetailController::class, "getDetail
 Route::post('/purchaseDetails', [PurchaseDetailController::class, "postDetails"]);
 Route::put('/purchaseDetails', [PurchaseDetailController::class, "putDetails"]);
 Route::delete('/purchaseDetails/{id}', [PurchaseDetailController::class, "deletePurchaseDetail"]);
+
+Route::get('/branchs', [BranchController::class, "getBranches"]);
+Route::get('/branchs/editbranch{id}', [BranchController::class, "editBranch"]);
+Route::get('/branchs/newbranch', [BranchController::class, "newBranch"]);
+Route::get('/branchs/listbranchs', [BranchController::class, "listBranchs"]);
+Route::get('/branchs/{id}', [BranchController::class, "getBranch"]);
+Route::post('/branchs', [BranchController::class, "postBranch"]);
+Route::put('/branchs', [BranchController::class, "putBranch"]);
+Route::delete('/branchs/{id}', [BranchController::class, "deleteBranch"]);
+
