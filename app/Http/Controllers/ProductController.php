@@ -13,6 +13,10 @@ class ProductController extends Controller
         return Product::all();
     }
 
+    public function getProduct($id) {
+        return Product::find($id);
+    }
+
     public function listProducts() {
         return view("Products.list", ["products" => Product::all()]);
     }

@@ -51,7 +51,7 @@ class PurcharseController extends Controller
         return $result;
     }
 
-    public function deleteCustomer($id) {
+    public function deletePurchase($id) {
         $result = ['result' => 'ok'];
         try {
             $purchase = Purchase::find($id);
