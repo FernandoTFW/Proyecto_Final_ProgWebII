@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('purchasedetail', function (Blueprint $table) {
-            $table->foreign('id')->references('id')->on('Purcharse');
-            $table->foreign('id')->references('id')->on('Product');
+            $table->foreign('PurchaseID')->references('id')->on('Purcharse');
+            $table->foreign('ProductID')->references('id')->on('Product');
             $table->tinyint("queantity");
             $table->decimal("unitPrice", 10, 2);
             $table->smallint("status");
