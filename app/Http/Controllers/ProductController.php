@@ -14,11 +14,11 @@ class ProductController extends Controller
     }
 
     public function listProducts() {
-        return view("products.list", ["products" => Product::all()]);
+        return view("Products.list", ["products" => Product::all()]);
     }
 
     public function newProduct() {
-        return view("products.new");
+        return view("Products.new");
     }
 
     public function postProduct(Request $request) {
@@ -28,12 +28,12 @@ class ProductController extends Controller
             "stock" => $request->stock,
             "netContent" => $request->netContent
         ]);
-        return view("products.list", ["products" => Product::all()]);
+        return ['result' => 'ok'];
     }
 
     public function editProduct($id) {
         $product = Product::where(["id" => $id])->first();
-        return view("products.edit", ["product" => $product]);
+        return view("Products.edit", ["product" => $product]);
     }
 
     public function putProduct(Request $request) {
@@ -43,12 +43,12 @@ class ProductController extends Controller
         $product->stock = $request->stock;
         $product->netContent = $request->netContent;
         $product->update();
-        return view("products.list", ["products" => Product::all()]);
+        return ['result' => 'ok'];
     }
 
     public function deleteProduct(Request $request) {
         $product = Product::where(["id" => $request->id])->first();
         $product->delete();
-        return view("products.list", ["products" => Product::all()]);
+        return ['result' => 'ok'];
     }
 }
