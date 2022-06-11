@@ -9,5 +9,15 @@ use DB;
 
 class BranchController extends Controller
 {
-    //
+    public function getClients() {
+        return Client::all();
+    }
+
+    public function get($id) {
+        return Client::find($id);
+    }
+
+    public function listClients() {
+        return view("clients.list", ["clients" => Client::all()]);
+    }
 }
