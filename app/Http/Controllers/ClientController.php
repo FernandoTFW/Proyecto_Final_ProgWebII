@@ -13,7 +13,7 @@ class ClientController extends Controller
         return Client::all();
     }
 
-    public function get($id) {
+    public function getClient($id) {
         return Client::find($id);
     }
 
