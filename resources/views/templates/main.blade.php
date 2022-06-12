@@ -7,7 +7,12 @@
         @yield('script')
     </head>
     <body>
-        @yield('content')
+        <div class="container">
+            <h1>@yield('title')</h1>
+        </div>
+        <div class="container">
+            @yield('content')
+        </div>
     </body>
     @yield('footer')
 </html>
