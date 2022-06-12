@@ -7,7 +7,7 @@
         $scope.product = {}
         $scope.postProduct = () => {
             $http.post('/products', $scope.product).then((result) => {
-                window.location.href = '/list'
+                window.location.href = '/products/listproducts'
             })
         }
     })
