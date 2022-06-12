@@ -34,7 +34,7 @@
             <input type="text" ng-model="client.nit" class="form-control">
         </div>
         <div>
-            <button type="button" ng-click="putClient()" class="btn btn-primary">Submit</button>
+            <button type="button" ng-click="putClient()" class="btn btn-success">Submit</button>
         </div>
     </form>
 </div>
