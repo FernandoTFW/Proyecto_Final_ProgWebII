@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\PurchaseDetailController;
-
+use App\Http\Controllers\BranchController;
 
 /*
 |--------------------------------------------------------------------------

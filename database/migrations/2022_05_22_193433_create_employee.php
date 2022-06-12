@@ -20,9 +20,7 @@ return new class extends Migration
             $table->string("charge", 45);
             $table->tinyInteger("status");
             $table->timestamps();
-            $table->integer("branchId");
             $table->foreign('branchId')->references('id')->on('branch');
-
         });
     }
 
