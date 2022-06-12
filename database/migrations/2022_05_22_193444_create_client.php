@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string("bussinessName", 45);
             $table->string("nit", 20);
-            $table->tinyint("status");
             $table->timestamps();
         });
     }

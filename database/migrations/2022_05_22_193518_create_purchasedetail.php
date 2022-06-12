@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreign('ProductID')->references('id')->on('Product');
             $table->tinyint("queantity");
             $table->decimal("unitPrice", 10, 2);
-            $table->smallint("status");
             $table->timestamps();
         });
     }

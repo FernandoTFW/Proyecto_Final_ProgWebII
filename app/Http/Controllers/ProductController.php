@@ -18,7 +18,7 @@ class ProductController extends Controller
     }
 
     public function listProducts() {
-        return view("Product.list", ["products" => Product::all()]);
+        return view("Product.list", ["product" => Product::all()]);
     }
 
     public function newProduct() {
