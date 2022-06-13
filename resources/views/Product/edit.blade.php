@@ -16,7 +16,7 @@
 
         $scope.putProduct = () => {
             $http.put('/products', $scope.product).then((result) => {
-                window.location.href = '/listproducts'
+                window.location.href = '/products/listproducts'
             })
         }
     })
@@ -43,6 +43,7 @@
         </div>
         <div>
             <button type="button" ng-click="putProduct()" class="btn btn-primary">Submit</button>
+            <a href="/products/listproducts" class="btn btn-primary">Go Back</a>
         </div>
     </form>
 </div>

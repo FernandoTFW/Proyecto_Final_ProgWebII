@@ -36,7 +36,7 @@ Route::get('/cards', function () {
 });
 
 Route::get('/products', [ProductController::class, "getProducts"]);
-Route::get('/products/editproduct{id}', [ProductController::class, "editProduct"]);
+Route::get('/products/editproduct/{id}', [ProductController::class, "editProduct"]);
 Route::get('/products/newproduct', [ProductController::class, "newProduct"]);
 Route::get('/products/listproducts', [ProductController::class, "listProducts"]);
 Route::get('/products/{id}', [ProductController::class, "getProduct"]);
