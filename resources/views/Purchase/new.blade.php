@@ -5,7 +5,17 @@
     var app = angular.module('PurchaseNewModule', [])
     app.controller('PurchaseNewController', ($scope, $http) => {
         $scope.purchase = {}
+        $scope.product = {}
+        angular.element(document).ready(function() {
+            let ids = window.location.href.split('/')
+            let id = ids[ids.length - 1]
+
+            $http.get(`/products/${id}`).then((result) => {
+                $scope.product = result.data
+            })
+        })
         $scope.postPurchase = () => {
+            $scope.purchase.productId = $scope.product.id
             $http.post('/purchases', $scope.purchase).then((result) => {
                 
             })

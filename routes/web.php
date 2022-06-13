@@ -54,7 +54,7 @@ Route::put('/clients', [ClientController::class, "putClient"]);
 Route::delete('/clients/{id}', [ClientController::class, "deleteClient"]);
 
 Route::get('/purchases', [PurchaseController::class, "getPurchases"]);
-Route::get('/purchases/newpurchase', [PurchaseController::class, "newPurchase"]);
+Route::get('/purchases/newpurchase/{id}', [PurchaseController::class, "newPurchase"]);
 Route::get('/purchases/{id}', [PurchaseController::class, "getPurchase"]);
 Route::post('/purchases', [PurchaseController::class, "postPurchase"]);
 Route::put('/purchases', [PurchaseController::class, "putPurchase"]);

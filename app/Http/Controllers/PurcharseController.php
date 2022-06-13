@@ -36,7 +36,7 @@ class PurcharseController extends Controller
 
             PurchaseDetail::create([
                 'PurchaseID'=> $purchase->id,
-                'ProductID'=>1,
+                'ProductID'=>$request->productId,
                 'quanity'=> $request->quanity,
                 'unitPrice'=> $request->unitPrice
             ]);
@@ -76,7 +76,8 @@ class PurcharseController extends Controller
         return $result;
     }
 
-    public function newPurchase() {
-        return view("Purchase.new");
+    public function newPurchase($id) {
+        $product = Product::where(["id" => $id])->first();
+        return view("Purchase.new", ["product" => $product]);
     }
 }
