@@ -17,8 +17,6 @@ return new class extends Migration
             $table->id();
             $table->datetime("date");
             $table->decimal("total", 18, 2);
-            $table->foreign('EmployeeID')->references('id')->on('Employee');
-            $table->foreign('ClientID')->references('id')->on('Client');
             $table->timestamps();
         });
     }

@@ -11,9 +11,6 @@ class Purchase extends Model
 
     protected $fillable = [
         'date',
-        'total',
-        'EmployeeID',
-        'ClientID'
-        
+        'total'   
     ];
 }

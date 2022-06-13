@@ -6,8 +6,8 @@
     app.controller('EmployeeNewController', ($scope, $http) => {
         $scope.employee = {}
         $scope.postEmployee = () => {
-            $http.post('/employee', $scope.employee).then((result) => {
-                window.location.href = '/employee/listemployee'
+            $http.post('/employees', $scope.employee).then((result) => {
+                window.location.href = '/employees/listemployee'
             })
         }
     })
@@ -31,7 +31,7 @@
        
         <div>
             <button type="button" ng-click="postEmployee()" class="btn btn-success">Submit</button>
-            <a href="/employee/listemployee" class="btn btn-primary">Go Back</a>
+            <a href="/employees/listemployees" class="btn btn-primary">Go Back</a>
         </div>
     </form>
 </div>

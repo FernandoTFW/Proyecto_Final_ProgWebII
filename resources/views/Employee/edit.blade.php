@@ -9,14 +9,14 @@
             let ids = window.location.href.split('/')
             let id = ids[ids.length - 1]
 
-            $http.get(`/employee/${id}`).then((result) => {
+            $http.get(`/employees/${id}`).then((result) => {
                 $scope.employee = result.data
             })
         })
 
         $scope.putEmployee = () => {
-            $http.put('/employee', $scope.employee).then((result) => {
-                window.location.href = '/employee/listemployee'
+            $http.put('/employees', $scope.employee).then((result) => {
+                window.location.href = '/employees/listemployees'
             })
         }
     })
@@ -40,7 +40,7 @@
         
         <div>
             <button type="button" ng-click="putEmployee()" class="btn btn-success">Submit</button>
-            <a href="/employee/listemployee" class="btn btn-primary">Go Back</a>
+            <a href="/employees/listemployees" class="btn btn-primary">Go Back</a>
         </div>
     </form>
 </div>

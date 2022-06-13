@@ -5,14 +5,14 @@
     var app = angular.module('EmployeeListModule', [])
     app.controller('EmployeeListController', ($scope, $http) => {
         angular.element(document).ready(function() {
-            $http.get('/employee').then((result) => {
-                $scope.employee = result.data
+            $http.get('/employees').then((result) => {
+                $scope.employees = result.data
             })
         })
         $scope.deleteEmployee = (id) => {
-            $http.delete(`/employee/${id}`).then((result) => {
-                $http.get('/employee').then((result) => {
-                $scope.employee = result.data
+            $http.delete(`/employees/${id}`).then((result) => {
+                $http.get('/employees').then((result) => {
+                $scope.employees = result.data
             })
             })
         }
@@ -33,28 +33,30 @@
                 <th>
                     charge
                 </th>
+                <th>
+                </th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="employee in employeee">
+            <tr ng-repeat="employee in employees">
                 <td>
-                    @{{ employee.firstName }}}
+                    @{{ employee.firstName }}
                 </td>
                 <td>
-                    @{{ employee.lastName }}}}
+                    @{{ employee.lastName }}
                 </td>
                 <td>
                     @{{ employee.charge }}
                 </td>
                 <td>
                     <button type="button" ng-click="deleteEmployee(employee.id)" class="btn btn-primary">Delete</button>
-                    <a href="@{{ '/employee/editemployee/' + employee.id }}" class="btn btn-primary">Edit</a>
+                    <a href="@{{ '/employees/editemployee/' + employee.id }}" class="btn btn-primary">Edit</a>
                 </td>
                 
             </tr>
         </tbody>
     </table>
-    <a href="/employee/newemployee" class="btn btn-dark">New Employee</a>
+    <a href="/employees/newemployee" class="btn btn-dark">New Employee</a>
 </div>
 
 @stop
