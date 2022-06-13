@@ -7,7 +7,7 @@
         $scope.client = {}
         $scope.postClient = () => {
             $http.post('/clients', $scope.client).then((result) => {
-                window.location.href = '/listclients'
+                window.location.href = '/clients/listclients'
             })
         }
     })
@@ -18,7 +18,7 @@
     <form>
         <div>
             Business name:
-            <input type="text" ng-model="client.businessName" class="form-control">
+            <input type="text" ng-model="client.bussinessName" class="form-control">
         </div>
         <div>
             Nit:
@@ -26,6 +26,7 @@
         </div>
         <div>
             <button type="button" ng-click="postClient()" class="btn btn-primary">Submit</button>
+            <a href="/clients/listclients" class="btn btn-primary">Go Back</a>
         </div>
     </form>
 </div>

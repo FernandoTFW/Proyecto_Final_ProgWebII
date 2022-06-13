@@ -30,12 +30,15 @@
                 <th>
                     Nit
                 </th>
+                <th>
+                    
+                </th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="client in clients">
                 <td>
-                    @{{ client.businessName }}
+                    @{{ client.bussinessName }}
                 </td>
                 <td>
                     @{{ client.nit }}
@@ -43,12 +46,10 @@
                 <td>
                     <button type="button" ng-click="deleteClient(client.id)" class="btn btn-primary">Delete</button>
                     <a href="@{{ '/clients/editclient/' + client.id }}" class="btn btn-primary">Edit</a>
-                    <a href="@{{ '/purchases/newpurchase/' + client.id }}" class="btn btn-success">Buy</a>
                 </td>
             </tr>
         </tbody>
     </table>
-    <a href="/newClient" class="btn btn-dark">New Client</a>
+    <a href="/clients/newclient" class="btn btn-dark">New Client</a>
 </div>
-
 @stop

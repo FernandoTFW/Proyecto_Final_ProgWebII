@@ -18,16 +18,16 @@ class ClientController extends Controller
     }
 
     public function listClients() {
-        return view("clients.list", ["clients" => Client::all()]);
+        return view("Client.list", ["client" => Client::all()]);
     }
 
     public function newClient() {
-        return view("clients.new");
+        return view("Client.new");
     }
 
     public function postClient(Request $request) {
         Client::create([
-            "businessName" => $request->businessName,
+            "bussinessName" => $request->bussinessName,
             "nit" => $request->nit
         ]);
         return ['result' => 'ok'];
@@ -35,12 +35,12 @@ class ClientController extends Controller
 
     public function editClient($id) {
         $client = Client::where(["id" => $id])->first();
-        return view("clients.edit", ["client" => $client]);
+        return view("Client.edit", ["client" => $client]);
     }
 
     public function putClient(Request $request) {
         $client = Client::where(["id" => $request->id])->first();
-        $client->businessName = $request->businessName;
+        $client->bussinessName = $request->bussinessName;
         $client->nit = $request->nit;
         $client->update();
         return ['result' => 'ok'];

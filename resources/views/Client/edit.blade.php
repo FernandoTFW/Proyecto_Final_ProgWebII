@@ -5,7 +5,7 @@
     var app = angular.module('ClientEditModule', [])
     app.controller('ClientEditController', ($scope, $http) => {
         $scope.client = {}
-        angular.element(document).ready(function() {
+        angular.element(document).ready(function(){
             let ids = window.location.href.split('/')
             let id = ids[ids.length - 1]
 
@@ -14,7 +14,7 @@
             })
         })
 
-        $scope.putClient () => {
+        $scope.putClient = () => {
             $http.put('/clients', $scope.client).then((result) => {
                 window.location.href = '/clients/listclients'
             })
@@ -27,7 +27,7 @@
     <form>
         <div>
             Business name:
-            <input type="text" ng-model="client.businessName" class="form-control">
+            <input type="text" ng-model="client.bussinessName" class="form-control">
         </div>
         <div>
             Nit:
