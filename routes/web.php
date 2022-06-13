@@ -36,7 +36,7 @@ Route::get('/cards', function () {
 });
 
 Route::get('/products', [ProductController::class, "getProducts"]);
-Route::get('/products/editproduct{id}', [ProductController::class, "editProduct"]);
+Route::get('/products/editproduct/{id}', [ProductController::class, "editProduct"]);
 Route::get('/products/newproduct', [ProductController::class, "newProduct"]);
 Route::get('/products/listproducts', [ProductController::class, "listProducts"]);
 Route::get('/products/{id}', [ProductController::class, "getProduct"]);
@@ -45,7 +45,7 @@ Route::put('/products', [ProductController::class, "putProduct"]);
 Route::delete('/products/{id}', [ProductController::class, "deleteProduct"]);
 
 Route::get('/clients', [ClientController::class, "getClients"]);
-Route::get('/clients/editclient{id}', [ClientController::class, "editClient"]);
+Route::get('/clients/editclient/{id}', [ClientController::class, "editClient"]);
 Route::get('/clients/newclient', [ClientController::class, "newClient"]);
 Route::get('/clients/listclients', [ClientController::class, "listClients"]);
 Route::get('/clients/{id}', [ClientController::class, "getClient"]);
@@ -67,7 +67,7 @@ Route::put('/purchaseDetails', [PurchaseDetailController::class, "putDetails"]);
 Route::delete('/purchaseDetails/{id}', [PurchaseDetailController::class, "deletePurchaseDetail"]);
 
 Route::get('/branchs', [BranchController::class, "getBranches"]);
-Route::get('/branchs/editbranch{id}', [BranchController::class, "editBranch"]);
+Route::get('/branchs/editbranch/{id}', [BranchController::class, "editBranch"]);
 Route::get('/branchs/newbranch', [BranchController::class, "newBranch"]);
 Route::get('/branchs/listbranchs', [BranchController::class, "listBranchs"]);
 Route::get('/branchs/{id}', [BranchController::class, "getBranch"]);

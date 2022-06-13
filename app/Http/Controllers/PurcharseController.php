@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Purchase;
+use App\Models\PurchaseDetail;
 use App\Models\Employee;
 use App\Models\Client;
 use DB;
@@ -21,16 +22,28 @@ class PurcharseController extends Controller
     public function postPurchase(Request $request) {
         $result = ['result' => 'ok'];
         try {
-
-            Purchase::create([
+            DB::beginTransaction();
+            $client = Client::create([
+                "businessName" => $request->businessName,
+                "nit" => $request->nit
+            ]);
+            $purchase = Purchase::create([
                 'date' => $request->date,
                 'total' => $request->total,
-                'EmployeeID' => $request->EmployeeID ,
-                'ClientID' => $request->ClientID
+                'EmployeeID' => 1 ,
+                'ClientID' => $client->id
             ]);
 
+            PurchaseDetail::create([
+                'PurchaseID'=> $purchase->id,
+                'ProductID'=>1,
+                'quanity'=> $request->quanity,
+                'unitPrice'=> $request->unitPrice
+            ]);
+            DB::commit();
         } catch (Exception $e) {
             $result = ['result' => 'error'];
+            DB::rollback();
         }
 
         return $result;

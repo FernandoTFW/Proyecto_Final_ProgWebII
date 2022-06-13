@@ -5,12 +5,11 @@
     var app = angular.module('PurchaseNewModule', [])
     app.controller('PurchaseNewController', ($scope, $http) => {
         $scope.purchase = {}
-        $scope.client = {}
-        $scope.purchaseDetail ={}
         $scope.postPurchase = () => {
-            $http.post('/purchase', $scope.product).then((result) => {
+            $http.post('/purchases', $scope.purchase).then((result) => {
                 
             })
+            
         }
     })
 </script>
@@ -20,15 +19,15 @@
     <form>
         <div>
             Client name:
-            <input type="text" ng-model="client.businessName" class="form-control">
+            <input type="text" ng-model="purchase.businessName" class="form-control">
         </div>
         <div>
             Client Nit:
-            <input type="text" ng-model="client.nit" class="form-control">
+            <input type="text" ng-model="purchase.nit" class="form-control">
         </div>
         <div>
             Product quantity:
-            <input type="text" ng-model="purchase.productPrice" class="form-control">
+            <input type="text" ng-model="purchase.quantity" class="form-control">
         </div>
         <div>
             Product price:
