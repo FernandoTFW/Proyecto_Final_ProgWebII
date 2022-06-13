@@ -32,6 +32,7 @@
         
         <div>
             <button type="button" ng-click="putBranch()" class="btn btn-success">Submit</button>
+            <a href="/branchs/listbranchs" class="btn btn-primary">Go Back</a>
         </div>
     </form>
 </div>

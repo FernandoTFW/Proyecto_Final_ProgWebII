@@ -7,7 +7,7 @@
         $scope.branch = {}
         $scope.postBranch = () => {
             $http.post('/branchs', $scope.branch).then((result) => {
-                window.location.href = '/listbranchs'
+                window.location.href = '/branchs/listbranchs'
             })
         }
     })
@@ -23,6 +23,7 @@
        
         <div>
             <button type="button" ng-click="postBranch()" class="btn btn-success">Submit</button>
+            <a href="/branchs/listbranchs" class="btn btn-primary">Go Back</a>
         </div>
     </form>
 </div>

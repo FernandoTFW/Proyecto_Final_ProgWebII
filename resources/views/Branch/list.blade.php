@@ -9,6 +9,13 @@
                 $scope.branchs = result.data
             })
         })
+        $scope.deleteBranch = (id) => {
+            $http.delete(`/branchs/${id}`).then((result) => {
+                $http.get('/branchs').then((result) => {
+                $scope.branchs = result.data
+            })
+            })
+        }
     })
 </script>
 @stop
@@ -20,6 +27,9 @@
                 <th>
                     Address
                 </th>
+                <th>
+                    
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -27,11 +37,15 @@
                 <td>
                     @{{ branch.address }}
                 </td>
+                <td>
+                    <button type="button" ng-click="deleteBranch(branch.id)" class="btn btn-primary">Delete</button>
+                    <a href="@{{ '/branchs/editbranch/' + branch.id }}" class="btn btn-primary">Edit</a>
+                </td>
                 
             </tr>
         </tbody>
     </table>
-    <a href="/newBranch" class="btn btn-dark">New Branch</a>
+    <a href="/branchs/newbranch" class="btn btn-dark">New Branch</a>
 </div>
 
 @stop
