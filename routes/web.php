@@ -6,6 +6,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PurcharseController;
 use App\Http\Controllers\PurchaseDetailController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +76,11 @@ Route::post('/branchs', [BranchController::class, "postBranch"]);
 Route::put('/branchs', [BranchController::class, "putBranch"]);
 Route::delete('/branchs/{id}', [BranchController::class, "deleteBranch"]);
 
+Route::get('/employee', [EmployeeController::class, "getEmployee"]);
+Route::get('/employee/editemployee/{id}', [EmployeeController::class, "editEmployee"]);
+Route::get('/employee/newemployee', [EmployeeController::class, "newEmployee"]);
+Route::get('/employee/listemployee', [EmployeeController::class, "listEmployee"]);
+Route::get('/employee/{id}', [EmployeeController::class, "getEmployee"]);
+Route::post('/employee', [EmployeeController::class, "postEmployee"]);
+Route::put('/employee', [EmployeeController::class, "putEmployee"]);
+Route::delete('/employee/{id}', [EmployeeController::class, "deleteEmployee"]);
