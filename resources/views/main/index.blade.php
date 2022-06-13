@@ -1,5 +1,4 @@
 @extends('templates.main')
-@section('title', 'CAPAG')
 @section("script")
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,10 +30,10 @@
       </section>
       <div class="menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Destination</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="branchs/listbranchs">Branchs</a></li>
+          <li><a href="employees/listemployees">Employees</a></li>
+          <li><a href="products/listproducts">Products</a></li>
+          <li><a href="clients/listclients">Clients</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </div>
