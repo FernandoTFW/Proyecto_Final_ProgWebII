@@ -29,8 +29,7 @@ class EmployeeController extends Controller
         Employee::create([
             "firstName" => $request->firstName,
             "lastName" => $request->lastName,
-            "charge" => $request->charge,
-            "netContent" => $request->netContent
+            "charge" => $request->charge
         ]);
         return ['result' => 'ok'];
     }
