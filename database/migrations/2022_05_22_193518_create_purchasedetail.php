@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('purchasedetail', function (Blueprint $table) {
             $table->foreign('PurchaseID')->references('id')->on('Purcharse');
             $table->foreign('ProductID')->references('id')->on('Product');
-            $table->tinyint("queantity");
+            $table->integer("queantity");
             $table->decimal("unitPrice", 10, 2);
             $table->timestamps();
         });

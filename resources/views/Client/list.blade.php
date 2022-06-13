@@ -42,7 +42,7 @@
                 </td>
                 <td>
                     <button type="button" ng-click="deleteClient(client.id)" class="btn btn-primary">Delete</button>
-                    <a href="@{{ '/products/editproduct/' + client.id }}" class="btn btn-primary">Edit</a>
+                    <a href="@{{ '/clients/editclient/' + client.id }}" class="btn btn-primary">Edit</a>
                     <a href="@{{ '/purchases/newpurchase/' + client.id }}" class="btn btn-success">Buy</a>
                 </td>
             </tr>
