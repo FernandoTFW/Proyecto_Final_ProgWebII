@@ -36,5 +36,7 @@
             </tr>
         </tbody>
     </table>
+    <a href="/newClient" class="btn btn-dark">New Client</a>
 </div>
+
 @stop

@@ -31,5 +31,7 @@
             </tr>
         </tbody>
     </table>
+    <a href="/newBranch" class="btn btn-dark">New Branch</a>
 </div>
+
 @stop

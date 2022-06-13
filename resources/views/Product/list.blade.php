@@ -48,5 +48,6 @@
             </tr>
         </tbody>
     </table>
+    <a href="/newProduct" class="btn btn-dark">New Product</a>
 </div>
 @stop
