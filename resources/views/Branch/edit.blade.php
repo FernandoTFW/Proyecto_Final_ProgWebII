@@ -14,9 +14,9 @@
             })
         })
 
-        $scope.putBranch () => {
+        $scope.putBranch = () => {
             $http.put('/branchs', $scope.branch).then((result) => {
-                window.location.href = '/listbranchs'
+                window.location.href = '/branchs/listbranchs'
             })
         }
     })
