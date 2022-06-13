@@ -9,6 +9,13 @@
                 $scope.clients = result.data
             })
         })
+        $scope.deleteClient = (id) => {
+            $http.delete(`/clients/${id}`).then((result) => {
+                $http.get('/clients').then((result) => {
+                $scope.clients = result.data
+            })
+            })
+        }
     })
 </script>
 @stop
@@ -32,6 +39,11 @@
                 </td>
                 <td>
                     @{{ client.nit }}
+                </td>
+                <td>
+                    <button type="button" ng-click="deleteClient(client.id)" class="btn btn-primary">Delete</button>
+                    <a href="@{{ '/products/editproduct/' + client.id }}" class="btn btn-primary">Edit</a>
+                    <a href="@{{ '/purchases/newpurchase/' + client.id }}" class="btn btn-success">Buy</a>
                 </td>
             </tr>
         </tbody>

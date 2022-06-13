@@ -18,8 +18,10 @@ return new class extends Migration
             $table->string("firstName", 45);
             $table->string("lastName", 45);
             $table->string("charge", 45);
-            $table->timestamps();
+            $table->integer("branchId");
             $table->foreign('branchId')->references('id')->on('branch');
+            $table->timestamps();
+
         });
     }
 
