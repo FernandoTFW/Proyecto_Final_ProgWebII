@@ -16,7 +16,7 @@
 
         $scope.putClient () => {
             $http.put('/clients', $scope.client).then((result) => {
-                window.location.href = '/listclients'
+                window.location.href = '/clients/listclients'
             })
         }
     })
@@ -35,6 +35,7 @@
         </div>
         <div>
             <button type="button" ng-click="putClient()" class="btn btn-success">Submit</button>
+            <a href="/clients/listclients" class="btn btn-primary">Go Back</a>
         </div>
     </form>
 </div>

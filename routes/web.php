@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\PurcharseController;
 use App\Http\Controllers\PurchaseDetailController;
 use App\Http\Controllers\BranchController;
 
@@ -53,12 +53,12 @@ Route::post('/clients', [ClientController::class, "postClient"]);
 Route::put('/clients', [ClientController::class, "putClient"]);
 Route::delete('/clients/{id}', [ClientController::class, "deleteClient"]);
 
-Route::get('/purchases', [PurchaseController::class, "getPurchases"]);
-Route::get('/purchases/newpurchase/{id}', [PurchaseController::class, "newPurchase"]);
-Route::get('/purchases/{id}', [PurchaseController::class, "getPurchase"]);
-Route::post('/purchases', [PurchaseController::class, "postPurchase"]);
-Route::put('/purchases', [PurchaseController::class, "putPurchase"]);
-Route::delete('/purchases/{id}', [PurchaseController::class, "deletePurchase"]);
+Route::get('/purchases', [PurcharseController::class, "getPurchases"]);
+Route::get('/purchases/newpurchase/{id}', [PurcharseController::class, "newPurchase"]);
+Route::get('/purchases/{id}', [PurcharseController::class, "getPurchase"]);
+Route::post('/purchases', [PurcharseController::class, "postPurchase"]);
+Route::put('/purchases', [PurcharseController::class, "putPurchase"]);
+Route::delete('/purchases/{id}', [PurcharseController::class, "deletePurchase"]);
 
 Route::get('/purchaseDetails', [PurchaseDetailController::class, "getDetails"]);
 Route::get('/purchaseDetails/{id}', [PurchaseDetailController::class, "getDetail"]);

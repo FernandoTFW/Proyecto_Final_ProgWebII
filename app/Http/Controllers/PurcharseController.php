@@ -7,6 +7,7 @@ use App\Models\Purchase;
 use App\Models\PurchaseDetail;
 use App\Models\Employee;
 use App\Models\Client;
+use App\Models\Product;
 use DB;
 
 class PurcharseController extends Controller
