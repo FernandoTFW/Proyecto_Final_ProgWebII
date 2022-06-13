@@ -9,7 +9,15 @@
                 $scope.products = result.data
             })
         })
+        $scope.deleteProduct = (id) => {
+            $http.delete(`/products/${id}`).then((result) => {
+                $http.get('/products').then((result) => {
+                $scope.products = result.data
+            })
+            })
+        }
     })
+    
 </script>
 @stop
 @section("content")
@@ -29,6 +37,9 @@
                 <th>
                     Net content
                 </th>
+                <th>
+                    
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -45,8 +56,14 @@
                 <td>
                     @{{ product.netContent }}
                 </td>
+                <td>
+                    <button type="button" ng-click="deleteProduct(product.id)" class="btn btn-primary">Delete</button>
+                    <a href="@{{ '/products/editproduct/' + product.id }}" class="btn btn-primary">Edit</a>
+                    <a href="@{{ '/purchases/newpurchase/' + product.id }}" class="btn btn-success">Buy</a>
+                </td>
             </tr>
         </tbody>
     </table>
+    <a href="/products/newproduct" class="btn btn-dark">New Product</a>
 </div>
 @stop

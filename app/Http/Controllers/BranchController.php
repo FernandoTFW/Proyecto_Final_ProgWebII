@@ -18,10 +18,10 @@ class BranchController extends Controller
     }
 
     public function listBranchs() {
-        return view("branchs.list", ["branchs" => Branch::all()]);
+        return view("Branch.list", ["branchs" => Branch::all()]);
     }
     public function newBranch() {
-        return view("branchs.new");
+        return view("Branch.new");
     }
     public function postBranch(Request $request) {
         Branch::create([
@@ -33,7 +33,7 @@ class BranchController extends Controller
 
     public function editBranch($id) {
         $branch = Branch::where(["id" => $id])->first();
-        return view("branchs.edit", ["branch" =>  $branch ]);
+        return view("Branch.edit", ["branch" =>  $branch ]);
     }
 
     public function putBranch(Request $request) {

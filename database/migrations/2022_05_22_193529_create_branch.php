@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('branch', function (Blueprint $table) {
             $table->id();
             $table->string("address");
-            $table->tinyint("status");
             $table->timestamps();
         });
     }

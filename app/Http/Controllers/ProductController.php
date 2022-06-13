@@ -18,11 +18,11 @@ class ProductController extends Controller
     }
 
     public function listProducts() {
-        return view("Products.list", ["products" => Product::all()]);
+        return view("Product.list", ["product" => Product::all()]);
     }
 
     public function newProduct() {
-        return view("Products.new");
+        return view("Product.new");
     }
 
     public function postProduct(Request $request) {
@@ -37,7 +37,7 @@ class ProductController extends Controller
 
     public function editProduct($id) {
         $product = Product::where(["id" => $id])->first();
-        return view("Products.edit", ["product" => $product]);
+        return view("Product.edit", ["product" => $product]);
     }
 
     public function putProduct(Request $request) {
