@@ -36,7 +36,7 @@ class PurcharseController extends Controller
             PurchaseDetail::create([
                 'PurchaseID'=> $purchase->id,
                 'ProductID'=>$request->productId,
-                'quanity'=> $request->quanity,
+                'quanity'=> $request->quantity,
                 'unitPrice'=> $request->unitPrice
             ]);
             DB::commit();
