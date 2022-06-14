@@ -25,7 +25,7 @@ class PurcharseController extends Controller
         try {
             DB::beginTransaction();
             $client = Client::create([
-                "businessName" => $request->businessName,
+                "bussinessName" => $request->businessName,
                 "nit" => $request->nit
             ]);
             $purchase = Purchase::create([

@@ -23,7 +23,7 @@ class PurcharseDetailController extends Controller
 
             $purchase = Purchase::create([
                 'date' => $request->date,
-                'total' => $request->total
+                'total' => $request->quantity * $request->unitPrice
             ]);
 
             PurchaseDetail::create([
