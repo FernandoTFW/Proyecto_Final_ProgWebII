@@ -45,7 +45,7 @@
         </div>
         <div>
             Date:
-            <input type="date" ng-model="purchase.stock" class="form-control">
+            <input type="date" ng-model="purchase.date" class="form-control">
         </div>
         <div>
             <button type="button" ng-click="postPurchase()" class="btn btn-primary">Submit</button>
