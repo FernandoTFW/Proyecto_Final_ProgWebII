@@ -17,7 +17,7 @@
         $scope.postPurchase = () => {
             $scope.purchase.productId = $scope.product.id
             $http.post('/purchases', $scope.purchase).then((result) => {
-                
+                window.location.href = '/index'
             })
             
         }
