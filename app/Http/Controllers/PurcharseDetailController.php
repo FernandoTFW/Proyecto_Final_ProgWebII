@@ -22,7 +22,7 @@ class PurcharseDetailController extends Controller
             DB::beginTransaction();
 
             $purchase = Purchase::create([
-                'date' => $request->date,
+                'date' => date("Y-m-d", strtotime($request->date)),
                 'total' => $request->quantity * $request->unitPrice
             ]);
 
