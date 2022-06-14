@@ -29,8 +29,8 @@ class PurcharseController extends Controller
                 "nit" => $request->nit
             ]);
             $purchase = Purchase::create([
-                'date' => $request->date,
-                'total' => $request->total
+                'date' => date("Y-m-d", strtotime($request->date)),
+                'total' => $request->quantity * $request->unitPrice
             ]);
 
             PurchaseDetail::create([
