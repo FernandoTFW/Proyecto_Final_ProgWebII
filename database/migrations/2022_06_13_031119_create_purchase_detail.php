@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('purchase_detail', function (Blueprint $table) {
+        Schema::create('purchase_details', function (Blueprint $table) {
             $table->integer("PurchaseID");
             $table->integer("ProductID");
             $table->foreign('PurchaseID')->references('id')->on('purcharse');
