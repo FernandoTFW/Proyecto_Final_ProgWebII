@@ -41,7 +41,7 @@
         </div>
         <div>
             Product price:
-            <input type="text" ng-model="purchase.productPrice" class="form-control">
+            <input type="text" ng-model="purchase.unitPrice" class="form-control">
         </div>
         <div>
             Date:
