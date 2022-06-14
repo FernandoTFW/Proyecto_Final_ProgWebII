@@ -12,7 +12,7 @@ class PurchaseDetail extends Model
     protected $fillable = [
         'PurchaseID',
         'ProductID',
-        'quanity',
+        'queantity',
         'unitPrice'
     ];
 }
